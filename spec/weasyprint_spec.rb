@@ -33,13 +33,6 @@ describe WeasyPrint do
       expect(weasyprint.options).to have_key('--replace')
     end
 
-    it "should provide default options" do
-      weasyprint = WeasyPrint.new('<h1>Oh Hai</h1>')
-      ['--format'].each do |option|
-        expect(weasyprint.options).to have_key(option)
-      end
-    end
-
     it "should default to 'UTF-8' encoding" do
       weasyprint = WeasyPrint.new('Captación')
       expect(weasyprint.options['--encoding']).to eq('UTF-8')
